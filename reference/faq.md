@@ -124,7 +124,9 @@ It depends on the access pattern of the application using the stream: if you wan
 
 ### Does NATS offer any guarantee of message ordering?
 
-NATS implements source ordered delivery per publisher. That is to say, messages from a given single publisher will be delivered to all eligible subscribers in the order in which they were originally published. There are no guarantees of message delivery order amongst multiple publishers.
+NATS pub/sub implements source ordered delivery per publisher. That is to say, messages from a given single publisher will be delivered to all eligible subscribers in the order in which they were originally published. There are no guarantees of message delivery order amongst multiple publishers.
+
+With NATS Jetstream messages are ordered as received by the server.  Each message has a sequence number which will be identical amongst all replicas.
 
 ### Is there a message size limitation in NATS?
 
